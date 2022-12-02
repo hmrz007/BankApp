@@ -1,0 +1,19 @@
+<div>
+    <h1 class="text-center text-white p-3" style="font-family:sans-serif ;">{{aim}}</h1>
+</div>
+
+<div class="container w-25 text-center border rounded bg-light mt-4 p-4">
+    
+
+            <h3 class="text-center " style="font-family: sans-serif;">LOGIN</h3>
+            <input type="text" #acno  name="acno" class="form-control mt-4"
+                [placeholder]="placehld" id="acid">
+            <input type="password" #psw  name="psw" class="form-control mt-4"  
+                placeholder="Enter password" id="pid">
+            <button type="submit" (click)="login(acno,psw)" class="btn btn-primary mt-3 mb-3"> LOGIN</button><br>
+
+            <a href="register.html" style="text-decoration: none;"> Register Here</a>
+        
+
+
+</div>
