@@ -17,3 +17,31 @@ html file-view
         1.2.1-event binding     (eventname)="method name()"
         1.2.2-event binding using $ event   (eventname)="methodname($event)"  //in html//  (change)="pswChange($event)",(change)="acnoChange($event)"
         1.2.3-evnt binding using template rendering variable   #variable
+
+2.Two way binding
+
+    2.1-ngmodel     [(ngmodel)]="value"
+                    FormsModule
+
+
+REDIRECTION in angular
+=======================
+
+navigateByUrl   -method to REDIRECTION
+Router -class
+AppRoutingModule -module
+
+dependancy injection
+--------------------
+-to use a method of class in another class
+-in contsructor
+-steps          access specifier -public/private
+                variable
+                class name
+                            private var:Classname
+
+
+Angular services
+----------------
+
+ng g s servicename

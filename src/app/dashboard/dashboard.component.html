@@ -1,0 +1,21 @@
+<form (ngSubmit)="deposit()">
+
+    <div class="container w-25 bg-light border rounded text-center p-2 mt-1 mb-2">
+        <h3>DEPOSIT</h3>
+        <input type="text" name="acno" [(ngModel)]="acno" class="form-control mt-4" placeholder="Enter acno" id="acid">
+        <input type="password" name="psw" [(ngModel)]="psw" class="form-control mt-4" placeholder="Enter password" id="pid">
+        <input type="text" name="aamount1" [(ngModel)]="amnt" class="form-control mt-4" placeholder="Enter Amount" id="amount">
+        <button type="submit" class="btn btn-primary mt-3 mb-3"> DEPOSIT</button>
+    </div>
+</form>
+
+
+<form (ngSubmit)="withdraw()">
+    <div class="container w-25 bg-light border rounded text-center p-2 mt-1">
+        <h3>WITHDRAW</h3>
+        <input type="text" name="acno1" [(ngModel)]="acno1" class="form-control mt-4" placeholder="Enter acno" id="acid1">
+        <input type="password" name="psw1" [(ngModel)]="psw1" class="form-control mt-4" placeholder="Enter password" id="pid1">
+        <input type="text" name="amount1" [(ngModel)]="amnt1" class="form-control mt-4" placeholder="Enter Amount" id="amount1">
+        <button type="submit" class="btn btn-primary mt-3 mb-3"> WITHDRAW</button>
+    </div>
+</form>

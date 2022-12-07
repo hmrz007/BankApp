@@ -1,6 +1,13 @@
 /* /* You can add global styles to this file, and also import other style files  */
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&family=Dancing+Script:wght@700&family=Lato&family=Lobster&family=Merriweather:ital,wght@1,300&family=Montserrat:wght@300;400&family=Mulish:wght@200&family=Nabla&family=Passions+Conflict&family=Roboto+Condensed:ital,wght@1,300&family=Roboto+Mono&family=Roboto:ital,wght@0,400;1,300&display=swap'); 
+
+
 body{
     background-image: url('./assets/dmitry-demidko-eBWzFKahEaU-unsplash.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+}
+h3{
+    color: blue;
+    font-family: 'Montserrat', sans-serif;
 }

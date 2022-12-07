@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from 'services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -17,8 +19,44 @@ export class LoginComponent {
     1003: { acno: 1003, username: "amal", password: 123, balance: 0 }
 
   }
-  // login() {        1.2.2 method
-  //   // alert('login clicked')
+  constructor(private router:Router,private ds:DataService){}
+
+
+  login() {       
+    // alert('login clicked')
+    var acno = this.acno //this this type aakand nikkan
+    var psw = this.psw
+    const result=this.ds.login(acno,psw)
+    if(result){
+      alert('Login success')
+      this.router.navigateByUrl('dashboard')
+    }
+    else{
+      alert('incorrect username or password')
+    }
+  }
+    
+    
+
+
+
+  acnoChange(event: any) {
+    
+
+    this.acno = event.target.value
+  }
+
+
+
+
+  pswChange(event: any) {
+    this.psw = event.target.value   //console.log(this.psw)
+  }
+
+  // login(a:any,b:any) {  //1.2.3 method
+  //   this.acno=a.value
+  //   this.psw=b.value
+
   //   var acno = this.acno //this this type aakand nikkan
   //   var psw = this.psw
   //   var userDetails = this.userDetails
@@ -33,40 +71,7 @@ export class LoginComponent {
   //   else {
   //     alert('incorrect username')
   //   }
-
   // }
-  // acnoChange(event: any) {
-  //   console.log(event);
-
-  //   this.acno = event.target.value
-  // }
-
-
-
-
-  // pswChange(event: any) {
-  //   this.psw = event.target.value   //console.log(this.psw)
-  // }
-
-  login(a:any,b:any) {  //1.2.3 method
-    this.acno=a.value
-    this.psw=b.value
-
-    var acno = this.acno //this this type aakand nikkan
-    var psw = this.psw
-    var userDetails = this.userDetails
-    if (acno in userDetails) {
-      if (psw == userDetails[acno]["password"]) {
-        alert('login success')
-      }
-      else {
-        alert("incorrect password")
-      }
-    }
-    else {
-      alert('incorrect username')
-    }
-  }
 
 
 
@@ -76,4 +81,5 @@ export class LoginComponent {
 
 
 }
+
 
