@@ -45,3 +45,15 @@ Angular services
 ----------------
 
 ng g s servicename
+
+
+
+
+
+Angular Directives
+------------------
+
+1-structural Directives-to handle sturctured data in view  (html)
+
+    -ngFor -    can directly apply in html to access elements from array
+    
