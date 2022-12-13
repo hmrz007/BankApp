@@ -9,6 +9,7 @@ import { DataService } from 'services/data.service';
 export class TransactionComponent {
   acno:any
   transaction:any
+  bal:any
 
 
 
@@ -18,6 +19,7 @@ export class TransactionComponent {
     this.acno=this.ds.currentacno
     
     this.transaction=this.ds.gettransaction(this.acno)  //transaction return cheyyunth array aan so to store it
+  
   }
 
 }

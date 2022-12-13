@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from 'services/data.service';
 
@@ -19,29 +20,45 @@ export class LoginComponent {
     1003: { acno: 1003, username: "amal", password: 123, balance: 0 }
 
   }
-  constructor(private router:Router,private ds:DataService){}
+  constructor(private router: Router, private ds: DataService, private fb: FormBuilder) { }
+  loginForm = this.fb.group({
+    acno: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    psw: ['', [Validators.required, Validators.pattern('[0-9]+')]]
+  })
 
 
-  login() {       
+  login() {
     // alert('login clicked')
-    var acno = this.acno //this this type aakand nikkan
-    var psw = this.psw
-    const result=this.ds.login(acno,psw)
-    if(result){
-      alert('Login success')
-      this.router.navigateByUrl('dashboard')
+    // var acno = this.acno //this this type aakand nikkan
+    // var psw = this.psw
+    var acno = this.loginForm.value.acno
+    var psw = this.loginForm.value.psw
+
+    if (this.loginForm.valid) {
+      const result = this.ds.login(acno, psw)
+      if (result) {
+        alert('Login success')
+        this.router.navigateByUrl('dashboard')
+      }
+      else {
+        alert('incorrect username or password')
+      }
     }
     else{
-      alert('incorrect username or password')
+      alert('invalid Form')
     }
+
   }
-    
-    
+
+
+
+
+
 
 
 
   acnoChange(event: any) {
-    
+
 
     this.acno = event.target.value
   }
@@ -53,29 +70,11 @@ export class LoginComponent {
     this.psw = event.target.value   //console.log(this.psw)
   }
 
-  // login(a:any,b:any) {  //1.2.3 method
-  //   this.acno=a.value
-  //   this.psw=b.value
-
-  //   var acno = this.acno //this this type aakand nikkan
-  //   var psw = this.psw
-  //   var userDetails = this.userDetails
-  //   if (acno in userDetails) {
-  //     if (psw == userDetails[acno]["password"]) {
-  //       alert('login success')
-  //     }
-  //     else {
-  //       alert("incorrect password")
-  //     }
-  //   }
-  //   else {
-  //     alert('incorrect username')
-  //   }
-  // }
 
 
 
-  
+
+
 
 
 

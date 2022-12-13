@@ -15,6 +15,7 @@ export class DataService {
 
   currentuser=''
   currentacno=''
+  
 
 
 
@@ -40,6 +41,9 @@ export class DataService {
         this.currentuser=userDetails[acno]['username']
         //store acnumber
         this.currentacno=userDetails[acno]['acno']
+        //store balance
+        
+
 
         return true
 
@@ -109,4 +113,4 @@ export class DataService {
 
 
 
-}0
+}

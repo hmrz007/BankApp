@@ -38,7 +38,7 @@ dependancy injection
 -steps          access specifier -public/private
                 variable
                 class name
-                            private var:Classname
+                 private var:Classname
 
 
 Angular services
@@ -49,11 +49,56 @@ ng g s servicename
 
 
 
-
 Angular Directives
 ------------------
 
 1-structural Directives-to handle sturctured data in view  (html)
 
     -ngFor -    can directly apply in html to access elements from array
+    -ngIf -     to apply if in html
+
     
+Form Validation in Angular
+---------------------------
+we can create forms in 2 ways
+
+    1.Template Driven Form
+
+    2.Model Driven Form
+
+        -Reactive forms
+        ----------------
+
+        ReactiveFormModule - Module used to create model form
+        FormBuilder -class of ReactiveFormModule
+                    group,array,control
+
+
+Validte Model Form
+-------------------
+
+Validator - a class in angular it includes methods for apply validation
+
+access errors in validator rule 
+
+        eg:this.registerForm.get('uname')?.errors
+
+        //.error is used to take output of it like how .then is used
+
+
+
+                    -valid  -empty response
+
+                    -invalid -Content
+
+
+Local Storage in angular
+------------------------
+
+-store        localStorage.setItem()
+-access       localStorage.getItem()
+-delete       localStorage.removeItem()
+
+
+
+
